@@ -1,6 +1,6 @@
-[submodule "/home/wmj/.config/awesome/net_widgets"]
-	path = /home/wmj/.config/awesome/net_widgets
+[submodule "~/.config/awesome/net_widgets"]
+	path = ~/.config/awesome/net_widgets
 	url = https://github.com/pltanton/net_widgets.git
-[submodule "/home/wmj/.config/awesome/awesome-wm-widgets"]
-	path = /home/wmj/.config/awesome/awesome-wm-widgets
+[submodule "~/.config/awesome/awesome-wm-widgets"]
+	path = ~/.config/awesome/awesome-wm-widgets
 	url = https://github.com/streetturtle/awesome-wm-widgets.git
