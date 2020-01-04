@@ -6,6 +6,9 @@ pcall(require, "luarocks.loader")
 local gears = require("gears")
 local awful = require("awful")
 require("awful.autofocus")
+-- screenful
+require("awful.remote")
+require("screenful")
 -- Widget and layout library
 local wibox = require("wibox")
 -- Theme handling library
