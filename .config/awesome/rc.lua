@@ -487,6 +487,22 @@ clientbuttons = gears.table.join(
 -- Set keys
 root.keys(globalkeys)
 -- }}}
+--
+function myfoucs_filter(c)
+	if awful.client.focus.filter(c) then
+		if c.class == 'Wine' and c.above == true then
+			return nil
+		elseif c.class == 'Wine'
+			and c.type == 'dialog'
+			and c.skip_taskbar == true
+			and c.size_hints.max_width and c.size_hints.max_width < 160
+			then
+				return nil
+		else
+			return c
+		end
+	end
+end
 
 -- {{{ Rules
 -- Rules to apply to new clients (through the "manage" signal).
@@ -495,7 +511,8 @@ awful.rules.rules = {
     { rule = { },
       properties = { border_width = beautiful.border_width,
                      border_color = beautiful.border_normal,
-                     focus = awful.client.focus.filter,
+                     -- focus = awful.client.focus.filter,
+                     focus = myfoucs_filter,
                      raise = true,
                      keys = clientkeys,
                      buttons = clientbuttons,
@@ -507,6 +524,11 @@ awful.rules.rules = {
 	{ rule = {class = "Firefox", name = "Download"}, properties = {floating = true}},
 	{ rule = {class = "VirtualBox"}, properties = {floating = true}},
 	{ rule = {name = "QEMU" }, properties = {floating = true}},
+	{ rule = {name = "TIM" }, properties = {
+		floating = true,
+		focusable = true,
+		border_width = 0
+	}},
 
     -- Floating clients.
     { rule_any = {
