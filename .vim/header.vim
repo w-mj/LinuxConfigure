@@ -10,7 +10,7 @@ function! HEADER_SHELL()
 endfunction
 
 
-autocmd BufNewFile *h call HEADER_H()
+autocmd BufNewFile *.h call HEADER_H()
 
 function! HEADER_H()
 	call setline(1, "#progma once")

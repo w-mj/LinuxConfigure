@@ -319,6 +319,8 @@ globalkeys = gears.table.join(
               {description = "open a terminal", group = "launcher"}),
 	awful.key({ modkey,           }, "c"     , function () awful.spawn("firefox") end,
 			  {description = "open firefox", group = "launcher"}),
+	awful.key({ modkey,           }, "v"     , function () awful.spawn("Thunar") end,
+			  {description = "open Thunar", group = "launcher"}),
 	awful.key({ modkey,           }, "d"      , function () awful.spawn("rofi -show run") end,
 			  {description = "run a application", group = "launcher"}),
     awful.key({ modkey, "Control" }, "r", awesome.restart,
