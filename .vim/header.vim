@@ -13,7 +13,7 @@ endfunction
 autocmd BufNewFile *.h call HEADER_H()
 
 function! HEADER_H()
-	call setline(1, "#progma once")
+	call setline(1, "#pragma once")
 	call setline(2, "")
 	normal G
 endfunction
