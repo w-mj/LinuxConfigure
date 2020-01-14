@@ -5,6 +5,22 @@ function! A_Timestamp()
 endfunction
 command! LUWHtimestamp call A_Timestamp()
 
+function! A_showDisplayableHexNum()
+	let numh = expand("<cword>")
+	let num = str2nr(numh, 16)
+	let lst = " KMGTT"
+	let i = 0
+	while num > 1024
+		if i > 4
+			break
+		endif
+		let	num /= 1024
+		let	i += 1
+	endwhile
+	echo printf("%f%c\n", num, strgetchar(lst, i))
+endfunction
+nmap <leader>o :call A_showDisplayableHexNum() <cr>
+
 " 刷新当前所用的CSCOPE
 function! A_FlushCscope()
 	exec "cs kill -1"
