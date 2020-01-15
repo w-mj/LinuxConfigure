@@ -90,6 +90,9 @@ set wildmenu
 "进入Vim不切换到文件所在目录
 set noautochdir
 
+"使用系统剪贴板
+set clipboard=unnamedplus
+
 "打开文件时光标返回上次离开的位置
 if has("autocmd")
 	autocmd BufReadPost * execute "normal g'\""

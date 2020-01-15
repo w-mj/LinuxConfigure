@@ -93,3 +93,7 @@ nnoremap <leader>V                  :so %<cr>
 autocmd filetype qf nnoremap <buffer> J j<cr>zz<c-w>j
 autocmd filetype qf nnoremap <buffer> K k<cr>zz<c-w>j
 
+"复制粘贴系统剪贴板
+nnoremap <C-y>       "+y
+vnoremap <C-y>       "+y
+nnoremap <C-p>       "+p
