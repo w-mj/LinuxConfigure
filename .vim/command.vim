@@ -21,6 +21,26 @@ function! A_showDisplayableHexNum()
 endfunction
 nmap <leader>o :call A_showDisplayableHexNum() <cr>
 
+" 执行项目
+" 从当前目录向上找，直到找到一个包含.git/的目录，认为是项目跟目录
+" 在根目录中执行make run
+function! A_Run()
+	let cwd = getcwd()
+	let par = cwd
+	let tocheck = printf("%s/%s", par, ".git/")
+	while par != '/home'
+		if isdirectory(tocheck)
+			echo printf("find project root at %s", par)
+			execute printf("make -C %s run", par)
+			break
+		endif
+		let par = fnamemodify(par, ':h')
+		let tocheck = printf("%s/%s", par, ".git/")
+	endwhile
+endfunction
+nmap <F12> :call A_Run()<cr>
+
+
 " 刷新当前所用的CSCOPE
 function! A_FlushCscope()
 	exec "cs kill -1"
@@ -28,7 +48,7 @@ function! A_FlushCscope()
 	exec "cs add cscope.out"
 endfunction
 command! LUWHFlushCscope call A_FlushCscope()
-nmap <F12> :call A_FlushCscope(); <cr>
+"nmap <F12> :call A_FlushCscope(); <cr>
 
 " 刷新js&html的cscope
 function! A_FlushJsCscope()
@@ -48,7 +68,7 @@ command! LUWHLog2Root call A_Log2Root()
 function! A_SudoWrite()
 	exec "write !sudo tee %"
 endfunction
-command! LUWHSudoWrite call A_SudoWrite()
+command! SudoSave call A_SudoWrite()
 
 function! A_F2_FormatCode()
 	if &filetype == 'c' || &filetype == 'h'

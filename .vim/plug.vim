@@ -54,6 +54,7 @@ endif
 
         "coc
         Plug 'neoclide/coc.nvim', {'branch': 'release'}
+		Plug 'jackguo380/vim-lsp-cxx-highlight'
 
         "Plug 'vim-scripts/taglist.vim'
 		Plug 'majutsushi/tagbar'
