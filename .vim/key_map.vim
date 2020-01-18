@@ -97,3 +97,9 @@ autocmd filetype qf nnoremap <buffer> K k<cr>zz<c-w>j
 nnoremap <C-y>       "+y
 vnoremap <C-y>       "+y
 nnoremap <C-p>       "+p
+
+map <C-LeftMouse> gd
+map <C-LeftMouse> gd
+map <X1Mouse> <C-O>
+map <X2Mouse> <C-I>
+
