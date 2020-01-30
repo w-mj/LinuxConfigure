@@ -555,7 +555,8 @@ awful.rules.rules = {
         name = {
           "Event Tester",  -- xev.
 		  "qalculate-gtk",
-		  "Calculator"
+		  "Calculator",
+		  "网易云音乐"
         },
         role = {
           "AlarmWindow",  -- Thunderbird's calendar.

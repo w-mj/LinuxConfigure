@@ -38,7 +38,9 @@ function! A_Run()
 		let tocheck = printf("%s/%s", par, ".git/")
 	endwhile
 endfunction
-map <F12> :call A_Run()<cr>
+nmap <F12> :call A_Run()<cr>
+vmap <F12> :call A_Run()<cr>
+imap <F12> <esc>:call A_Run()<cr>
 
 
 " 刷新当前所用的CSCOPE
