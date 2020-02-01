@@ -43,6 +43,11 @@ nnoremap <leader>h                  <c-w>h
 nnoremap <leader>j                  <c-w>j
 nnoremap <leader>k                  <c-w>k
 nnoremap <leader>l                  <c-w>l
+"调整多窗口大小
+nnoremap <leader>H                  <c-w><
+nnoremap <leader>J                  <c-w>-
+nnoremap <leader>K                  <c-w>+
+nnoremap <leader>L                  <c-w>>
 
 "按sn去掉高亮
 nnoremap <silent> sn                :nohl<cr>
