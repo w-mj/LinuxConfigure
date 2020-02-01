@@ -260,6 +260,8 @@ root.buttons(gears.table.join(
 
 -- {{{ Key bindings
 globalkeys = gears.table.join(
+	awful.key({"Control", "Mod1" }, "a", function () awful.spawn("flameshot gui") end, 
+			  {description = "screenshot by flameshot", group = "custom"}),
 	awful.key({ }, "XF86MonBrightnessUp", function () awful.spawn("sudo light -A 5") end, 
 			  {description = "increase brightness", group = "custom"}),
 	awful.key({ }, "XF86MonBrightnessDown", function () awful.spawn("sudo light -U 5") end, 
