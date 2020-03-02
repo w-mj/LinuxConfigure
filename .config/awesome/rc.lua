@@ -526,6 +526,7 @@ awful.rules.rules = {
 	{ rule = {class = "Firefox", name = "Download"}, properties = {floating = true}},
 	{ rule = {class = "VirtualBox"}, properties = {floating = true}},
 	{ rule = {name = "QEMU" }, properties = {floating = true}},
+	{ rule = {name = "WeChat Beta", class="wechat.exe" }, properties = {border_width = 0, floating = true}},
 	{ rule = {name = "TIM" }, properties = {
 		floating = true,
 		focusable = true,
@@ -558,7 +559,7 @@ awful.rules.rules = {
           "Event Tester",  -- xev.
 		  "qalculate-gtk",
 		  "Calculator",
-		  "网易云音乐"
+		  "网易云音乐",
         },
         role = {
           "AlarmWindow",  -- Thunderbird's calendar.
