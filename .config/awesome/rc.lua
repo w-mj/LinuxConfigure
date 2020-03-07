@@ -326,7 +326,7 @@ globalkeys = gears.table.join(
 			  {description = "open firefox", group = "launcher"}),
 	awful.key({ modkey,           }, "v"     , function () awful.spawn("Thunar") end,
 			  {description = "open Thunar", group = "launcher"}),
-	awful.key({ modkey,           }, "d"      , function () awful.spawn("rofi -show run") end,
+	awful.key({ modkey,           }, "d"      , function () awful.spawn("rofi -show drun") end,
 			  {description = "run a application", group = "launcher"}),
     awful.key({ modkey, "Control" }, "r", awesome.restart,
               {description = "reload awesome", group = "awesome"}),
@@ -529,12 +529,6 @@ awful.rules.rules = {
 	{ rule = {class = "Firefox", name = "Download"}, properties = {floating = true}},
 	{ rule = {class = "VirtualBox"}, properties = {floating = true}},
 	{ rule = {name = "QEMU" }, properties = {floating = true}},
-	{ rule = {name = "WeChat Beta", class="wechat.exe" }, properties = {border_width = 0, floating = true}},
-	{ rule = {name = "TIM" }, properties = {
-		floating = true,
-		focusable = true,
-		border_width = 0
-	}},
 
     -- Floating clients.
     { rule_any = {
