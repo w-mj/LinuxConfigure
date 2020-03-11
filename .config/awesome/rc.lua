@@ -106,20 +106,26 @@ awful.layout.layouts = {
 
 -- {{{ Menu
 -- Create a launcher widget and a main menu
--- myawesomemenu = {
---    { "hotkeys", function() hotkeys_popup.show_help(nil, awful.screen.focused()) end },
---    { "manual", terminal .. " -e man awesome" },
---    { "edit config", editor_cmd .. " " .. awesome.conffile },
---    { "restart", awesome.restart },
---    { "quit", function() awesome.quit() end },
--- }
--- 
+myawesomemenu = {
+   { "hotkeys", function() hotkeys_popup.show_help(nil, awful.screen.focused()) end },
+   { "manual", terminal .. " -e man awesome" },
+   { "edit config", editor_cmd .. " " .. awesome.conffile },
+   { "restart", awesome.restart },
+   { "quit", function() awesome.quit() end },
+}
+
 -- mymainmenu = awful.menu({ items = { { "awesome", myawesomemenu, beautiful.awesome_icon },
 --                                     { "open terminal", terminal }
 --                                   }
 --                         })
 -- mymainmenu = awful.menu({ items = freedesktop.menu.build() })
-mymainmenu = freedesktop.menu.build()
+mymainmenu = freedesktop.menu.build({
+	before = {
+		{"Awesome", myawesomemenu, beautiful.awesome_icon},
+	},
+	after = {
+		{"Open terminal", terminal},
+	}})
 mylauncher = awful.widget.launcher({ image = beautiful.awesome_icon,
                                      menu = mymainmenu })
 
@@ -571,8 +577,9 @@ awful.rules.rules = {
     },
 
     -- Set Firefox to always map on the tag named "2" on screen 1.
-    -- { rule = { class = "Firefox" },
-    --   properties = { screen = 1, tag = "2" } },
+    { rule = { class = "tim.exe" },
+      properties = { screen = 1, tag = "9",  border_width = 0 }
+  },
 }
 -- }}}
 
