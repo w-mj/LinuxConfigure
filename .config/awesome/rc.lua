@@ -125,6 +125,8 @@ mymainmenu = freedesktop.menu.build({
 	},
 	after = {
 		{"Open terminal", terminal},
+		{"Reboot", terminal .. " -e reboot"},
+		{"Shutdown", terminal .. " -e shutdown now"},
 	}})
 mylauncher = awful.widget.launcher({ image = beautiful.awesome_icon,
                                      menu = mymainmenu })
@@ -534,6 +536,7 @@ awful.rules.rules = {
 
 	{ rule = {class = "Firefox", name = "Download"}, properties = {floating = true}},
 	{ rule = {class = "VirtualBox"}, properties = {floating = true}},
+	{ rule = {class = "jetbrains-clion"}, properties = {border_width = 0}},
 	{ rule = {name = "QEMU" }, properties = {floating = true}},
 
     -- Floating clients.

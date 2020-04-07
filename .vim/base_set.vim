@@ -1,6 +1,9 @@
 "显示行号
 set number
 
+"可以用C-a递增字母
+set nrformats+=alpha
+
 set ttyfast "should make scrolling faster
 set lazyredraw "same as above
 
