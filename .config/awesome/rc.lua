@@ -126,7 +126,7 @@ mymainmenu = freedesktop.menu.build({
 	after = {
 		{"Open terminal", terminal},
 		{"Reboot", terminal .. " -e reboot"},
-		{"Shutdown", terminal .. " -e shutdown now"},
+		{"Shutdown", terminal .. " -e \"shutdown now\""},
 	}})
 mylauncher = awful.widget.launcher({ image = beautiful.awesome_icon,
                                      menu = mymainmenu })
