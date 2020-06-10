@@ -580,8 +580,8 @@ awful.rules.rules = {
     },
 
     -- Set Firefox to always map on the tag named "2" on screen 1.
-    { rule = { class = "tim.exe" },
-      properties = { screen = 1, tag = "9",  border_width = 0 }
+    { rule_any = { class = {"tim.exe", "qq.exe", "Wine"} },
+      properties = {tag = "9",  border_width = 0, titlebars_enabled = false }
   },
 }
 -- }}}
