@@ -113,10 +113,12 @@ endif
         "colorscheme rigel
         colorscheme dracula
             "启用定位光标的行列，设置行列样式
-            set cursorline
-            highlight CursorLine ctermfg=None ctermbg=236 guifg=None guibg=#224466
-            set cursorcolumn
-            highlight CursorColumn ctermfg=None ctermbg=236 guifg=None guibg=#224466
+			if has("nvim")
+            	set cursorline
+            	highlight CursorLine ctermfg=None ctermbg=236 guifg=None guibg=#224466
+            	set cursorcolumn
+            	highlight CursorColumn ctermfg=None ctermbg=236 guifg=None guibg=#224466
+			endif
         "colorscheme blue-mood
         highlight Normal guibg=NONE ctermbg=None
 
